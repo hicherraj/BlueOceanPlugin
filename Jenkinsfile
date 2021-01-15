@@ -4,6 +4,10 @@ pipeline {
     stage('Build') {
       steps {
         echo 'Build completed'
+        retry(count: 2) {
+          sh 'echo "Run nummer 1000"'
+        }
+
       }
     }
 
